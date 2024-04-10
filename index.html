@@ -2,38 +2,76 @@
 <html>
 
 <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles">
-    <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
+  <title>Pick Your Favorite Drone!</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #droneChoice,
+    #taskChoice {
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 5px;
+    }
+  </style>
 </head>
 
 <body>
-    <header class="main-header">
-        <h1 class="title">LA TV Shows</h1>
-    </header>
-    <div id="card-container">
-        
+  <div id="title">Dronify</div>
+  <h1 id="mainTitle">Explore Our Range of Drones</h1>
+  <p id="shortDescription">*Use the next button or dropdown to view all 10 drones in stock*</p>
+  <div id="drone-container">
+    <img id="currentDrone" src="drones/drone1.jpg" alt="Drone 1" />
+    <button id="nextButton">Next</button>
+    <select id="droneChoice">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </div>
+
+  <h2>Select the Drone's Functionality</h2>
+  <select id="taskChoice">
+    <option value="1">Take aerial photographs</option>
+    <option value="2">Deliver a package</option>
+    <option value="3">Help with search and rescue</option>
+    <option value="4">Map a terrain</option>
+    <option value="5">Inspect a building</option>
+  </select>
+  <p id="droneResponse"></p>
+
+  <button id="addToCartButton">Add to Cart</button>
+
+  <div class="card" style="display: none;">
+    <img class="card-image" src="" alt="Drone Image">
+    <div class="card-details">
+      <h2 class="card-title"></h2>
+      <p class="card-description"></p>
+      <p class="card-price"></p>
+      <button class="add-to-cart-button">Add to Cart</button>
     </div>
-    <div class="card" style="display: none;">
-        <div class="card-content">
-            <h2>TV Show Title</h2>
-            <img src="" alt="TV Show Poster">
-            <ul>
-                <li>Bullet Point 1</li>
-                <li>Bullet Point 2</li>
-                <li>Bullet Point 3</li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer">
-        <button onclick="quoteAlert();">
-            Get A Quote!
-        </button>
-        <button onclick="removeLastCard();">
-            Remove A Card!
-        </button>
-    </div>
+  </div>
+
+  <!-- View Cart Button -->
+  <button id="viewCartButton">View Cart</button>
+
+  <!-- Remove Items Button -->
+  <button id="removeItemsButton">Remove Items</button>
+
+  <!-- Container to display cart items -->
+  <div id="cartItemsContainer"></div>
+
+  <div id="cartContainer">
+    <img id="cartIcon" src="drones/shopping-cart.png" alt="Cart" width="30" height="30"> <!-- Updated image path -->
+    <div id="cartTotal"></div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
